@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+<!-- Page Content -->
+<!-- Items Starts Here -->
+
+{% include 'mainapp/includes/inc_category_menu.html' %}
+
+<diм class="featured container no-gutter">
+
+    <diм class="row posts">
+
+        {% for product in products %}
+
+        <div id="1" class="item new col-md-4">
+            <a href="{% url 'products:product' product.pk %}">
+                <div class="featured-item">
+                  <img src="/media/{{ product.image }}" alt="{{ product.short_desc }}">
+                  <h4>{{ product.name }}</h4>
+                  <h6>${{ product.prise }}</h6>
+                  <p>{{ product.description }}</p>
+                </div>
+              </a>
+        </div>
+
+        {% endfor %}
+
+    </diм>
+</diм>
+
+<div class="page-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <ul>
+                    <li class="current-page"><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Featred Page Ends Here -->
+{% endblock %}
+
+

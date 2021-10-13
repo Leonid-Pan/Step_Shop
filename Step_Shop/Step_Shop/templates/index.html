@@ -1,0 +1,60 @@
+{% extends 'Base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- Page Content -->
+<!-- Banner Starts Here -->
+<div class="banner">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="caption">
+                    <h2>Welcome To Site</h2>
+                    <p>
+                        <strong>
+                            <h1>
+                                we do not try a bit
+                            </h1>
+                        </strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Banner Ends Here -->
+
+<!-- Featured Starts Here -->
+<div class="featured-items">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-heading">
+                    <div class="line-dec"></div>
+                    <h1>something</h1>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="owl-carousel owl-theme">
+
+
+                    {% for product in products %}
+                    <a href="#">
+                        <div class="featured-item">
+                            <img src="/media/{{ product.image }}" alt="{{ product.short_desc }}">
+                            <h4>{{ product.description }}</h4>
+                            <h6>${{ product.prise }}</h6>
+                        </div>
+                    </a>
+                    {% endfor %}
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Featred Ends Here -->
+
+{% endblock %}
